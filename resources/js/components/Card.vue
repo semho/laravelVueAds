@@ -1,10 +1,10 @@
 <template>
   <div class="row">
     <div class="col-md-4" v-for="card in cards" >
-      <router-link :to="'/card/' + card.id">
+      <router-link :to="'/list/' + card.id">
         <div class="card" :id="card.id">
           <div class="image-container">
-            <img class="img-fluid rounded thumbnail-image" :src="card.photo" alt="Фото">
+            <img class="img-fluid rounded thumbnail-image" :src="card.photo[0]" alt="Фото">
           </div>
           <div class="product-detail-container p-2">
             <div class="d-flex justify-content-between align-items-center">

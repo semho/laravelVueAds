@@ -1,10 +1,8 @@
 <template>
 
   <div>
-    <router-link to="/list">Ads List</router-link>
     <router-view/>
   </div>
-
 </template>
 
 <script>
