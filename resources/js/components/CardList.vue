@@ -4,22 +4,44 @@
       <h1>
         {{ title }}
       </h1>
-      <list :cards="cards"></list>
+      <div class="row">
+        <div class="col-md-6" v-for="item in pageOfItems" >
+          <router-link :to="'/list/' + item.id">
+            <div class="card" :id="item.id">
+              <div class="image-container">
+                <img class="img-fluid rounded thumbnail-image" :src="item.photo[0]" alt="Фото">
+              </div>
+              <div class="product-detail-container p-2">
+                <div class="d-flex justify-content-between align-items-center">
+                  <h5 class="dress-name">{{ item.name }}</h5>
+                  <div class="d-flex flex-column mb-2">
+                    <small class="old-price text-right">{{ item.price }} руб</small>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="desc">{{ item.description }}</div>
+                </div>
+              </div>
+            </div>
+          </router-link>
+        </div>
+
+      </div>
+
+      <div class="card-footer pb-0 pt-3">
+        <jw-pagination :items="cards" @changePage="onChangePage"></jw-pagination>
+      </div>
     </div>
 </template>
 
 <script>
-import Cards from './Card.vue'
-
 export default {
   name: "CardList",
-  components: {
-    list: Cards,
-  },
   data() {
     return {
       title: 'Список объявлений',
       cards: [],
+      pageOfItems: [],
     }
   },
   mounted() {
@@ -42,6 +64,11 @@ export default {
       this.cards = newData;
     })
   },
+  methods: {
+    onChangePage(pageOfItems) {
+      this.pageOfItems = pageOfItems;
+    }
+  }
 }
 </script>
 
