@@ -12,7 +12,7 @@ class MainController extends Controller
 
   public function list()
   {
-    return Ad::all();
+    return Ad::latest()->get();
   }
 
   public function show($id)

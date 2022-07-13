@@ -16,14 +16,8 @@
     <title>Сайт объявлений</title>
   </head>
   <body>
-{{--    @extends('layouts.app')--}}
-
-{{--    @section('content')--}}
-      <div class="container mt-5" id="app">
-
+      <div class="app__container container mt-5" id="app">
         <Home></Home>
-
       </div>
-{{--    @endsection--}}
   </body>
 </html>

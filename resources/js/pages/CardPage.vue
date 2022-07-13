@@ -1,18 +1,18 @@
 <template>
-  <div>
-    <router-link to="/">Вернуться к списку</router-link>
-    <h1>
+  <div class="app__card-detail card-detail">
+    <router-link to="/" class="card-detail__back">Вернуться к списку</router-link>
+    <h1 class="card-detail__title">
       Объявление: {{ card.name }}
     </h1>
-    <div class="first-img row">
-      <img class="col-md-6" :src="card.photo" alt="Первое фото">
+    <div class="card-detail__container-first-img first-img row">
+      <img class="card-detail-first-img col-md-6" :src="card.photo" alt="Первое фото">
     </div>
-    <div class="other-img row"  v-if="otherPhoto !== null">
-      <img class="col-md-6" v-if="otherPhoto.photo_1" :src="otherPhoto.photo_1" alt="Второе фото">
-      <img class="col-md-6" v-if="otherPhoto.photo_2" :src="otherPhoto.photo_2" alt="Третье фото">
+    <div class="card-detail__container-other other-img row"  v-if="otherPhoto !== null">
+      <img class="card-detail__other col-md-6" v-if="otherPhoto.photo_1" :src="otherPhoto.photo_1" alt="Второе фото">
+      <img class="card-detail__other col-md-6" v-if="otherPhoto.photo_2" :src="otherPhoto.photo_2" alt="Третье фото">
     </div>
-    <p> {{ card.description }}</p>
-    <p> {{ card.price }} руб.</p>
+    <p class="card-detail__description"> {{ card.description }}</p>
+    <p class="card-detail__price"> {{ card.price }} руб.</p>
   </div>
 </template>
 

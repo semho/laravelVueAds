@@ -1,41 +1,41 @@
 <template>
-  <div>
-    <router-link to="/">Вернуться к списку</router-link>
-    <h1>
+  <div class="app__create-ad create-ad">
+    <router-link to="/" class="create-add__back">Вернуться к списку</router-link>
+    <h1 class="create-add__title">
       Создание объявления
     </h1>
-    <form id="formCreate">
-      <div class="form-row">
-        <p v-if="errors.length">
-          <b>Пожалуйста исправьте указанные ошибки:</b>
-          <ul>
-            <li v-for="error in errors">{{ error }}</li>
+    <form id="formCreate" class="create-add__form">
+      <div class="create-add__form-row form-row">
+        <p class="create-add__wrap-error" v-if="errors.length">
+          <b class="create-add__title-error">Пожалуйста исправьте указанные ошибки:</b>
+          <ul class="create-add__list-error">
+            <li class="create-add__item-error" v-for="error in errors">{{ error }}</li>
           </ul>
         <p>
 
-        <div class="form-group col-md-8">
-          <label for="inputName">Название объявления</label>
-          <input v-model="name" name="name" type="text" class="form-control" id="inputName" aria-describedby="name" placeholder="Введите название объявления">
-          <small id="nameHelp" class="form-text text-muted">Название не должно быть пустым и не более 200 символов</small>
+        <div class="create-add__form-group form-group col-md-8">
+          <label class="create-add__label-input" for="inputName">Название объявления</label>
+          <input v-model="name" name="name" type="text" class="create-add__input form-control" id="inputName" aria-describedby="name" placeholder="Введите название объявления">
+          <small id="nameHelp" class="create-add__help form-text text-muted">Название не должно быть пустым и не более 200 символов</small>
         </div>
-        <div class="form-group col-md-4">
-          <label for="inputPrice">Цена</label>
-          <input v-model="price" name="price" type="text" class="form-control" id="inputPrice" aria-describedby="price" placeholder="Введите цену товара">
-          <small id="priceHelp" class="form-text text-muted">Цена не может быть пустой</small>
+        <div class="create-add__form-group form-group col-md-4">
+          <label class="create-add__label-input" for="inputPrice">Цена</label>
+          <input v-model="price" name="price" type="text" class="create-add__input form-control" id="inputPrice" aria-describedby="price" placeholder="Введите цену товара">
+          <small id="priceHelp" class="create-add__help form-text text-muted">Цена не может быть пустой</small>
         </div>
       </div>
-      <div class="form-group">
+      <div class="create-add__form-group form-group">
         <input type="file" ref="files" id="files" hidden="" multiple v-on:change="handleFileUploads()">
-        <label for="files" class="btn btn-success" >Загрузить фото</label>
-        <small id="fileHelp" class="form-text text-muted">Не более трех файлов</small>
+        <label for="files" class="create-add__label-file btn btn-success" >Загрузить фото</label>
+        <small id="fileHelp" class="create-add__help form-text text-muted">Не более трех файлов</small>
       </div>
 
-      <div class="form-group">
-        <label class="small mb-1" for="description">Подробности объявления</label>
-        <textarea v-model="description" class="form-control mb-3" name="description" id="description"></textarea>
-        <small id="descriptionHelp" class="form-text text-muted">Описание не больше 1000 символов</small>
+      <div class="create-add__form-group form-group">
+        <label class="create-add__label-textarea small mb-1" for="description">Подробности объявления</label>
+        <textarea v-model="description" class="create-add__textarea form-control mb-3" name="description" id="description"></textarea>
+        <small id="descriptionHelp" class="create-add__help form-text text-muted">Описание не больше 1000 символов</small>
       </div>
-      <button class="btn btn-primary" v-on:click="submitFiles()" onclick="return false">Создать</button>
+      <button class="create-add__submit btn btn-primary" v-on:click="submitFiles()" onclick="return false">Создать</button>
     </form>
   </div>
 </template>
