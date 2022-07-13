@@ -2547,7 +2547,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.pagination-list[data-v-f3edd38e] {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  margin-top: 30px;\n}\n.page[data-v-f3edd38e] {\n  margin-right: 10px;\n  padding: 8px 12px;\n  background: #aeaeae;\n  color: #636b6f;\n}\n.page[data-v-f3edd38e]:hover {\n  background: #0056b3;\n  color: white;\n  cursor: pointer;\n}\n.page__selected[data-v-f3edd38e] {\n  background: #0056b3;\n  color: white;\n  cursor: pointer;\n}\n.cards-list__col[data-v-f3edd38e] {\n  margin-bottom: 15px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.pagination-list[data-v-f3edd38e] {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  justify-content: center;\r\n  margin-top: 30px;\n}\n.page[data-v-f3edd38e] {\r\n  margin-right: 10px;\r\n  padding: 8px 12px;\r\n  background: #aeaeae;\r\n  color: #636b6f;\n}\n.page[data-v-f3edd38e]:hover {\r\n  background: #0056b3;\r\n  color: white;\r\n  cursor: pointer;\n}\n.page__selected[data-v-f3edd38e] {\r\n  background: #0056b3;\r\n  color: white;\r\n  cursor: pointer;\n}\n.cards-list__col[data-v-f3edd38e] {\r\n  margin-bottom: 15px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2571,7 +2571,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\ninput[type=\"file\"][data-v-3f685875]{\n  position: absolute;\n  top: -500px;\n}\ndiv.file-listing[data-v-3f685875]{\n  width: 200px;\n}\nspan.remove-file[data-v-3f685875]{\n  color: red;\n  cursor: pointer;\n  float: right;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\ninput[type=\"file\"][data-v-3f685875]{\r\n  position: absolute;\r\n  top: -500px;\n}\ndiv.file-listing[data-v-3f685875]{\r\n  width: 200px;\n}\nspan.remove-file[data-v-3f685875]{\r\n  color: red;\r\n  cursor: pointer;\r\n  float: right;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2595,7 +2595,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.card-detail-first-img[data-v-2a194670] {\n  margin: 0 auto;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.card-detail-first-img[data-v-2a194670] {\r\n  margin: 0 auto;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

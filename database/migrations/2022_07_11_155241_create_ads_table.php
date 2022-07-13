@@ -18,7 +18,7 @@ class CreateAdsTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->text('description');
-            $table->string('price');
+            $table->bigInteger('price');
             $table->string('photo');
         });
     }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июл 13 2022 г., 13:45
+-- Время создания: Июл 13 2022 г., 14:18
 -- Версия сервера: 5.7.29
 -- Версия PHP: 7.4.5
 
@@ -33,7 +33,7 @@ CREATE TABLE `ads` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `price` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` bigint(20) NOT NULL,
   `photo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -42,9 +42,10 @@ CREATE TABLE `ads` (
 --
 
 INSERT INTO `ads` (`id`, `created_at`, `updated_at`, `name`, `description`, `price`, `photo`) VALUES
-(1, '2022-07-11 19:30:24', '2022-07-11 19:30:28', 'Первое объявление', 'Подробности первого объявления', '100', '../storage/img/photo_1.jpg'),
-(2, '2022-07-11 19:30:33', '2022-07-11 19:30:37', 'Второе объявление', 'Подробности второго объявления', '200', '../storage/img/photo_2.jpg'),
-(3, '2022-07-11 19:30:34', '2022-07-11 19:30:38', 'Третье объявление', 'Подробности третьего объявления', '300', '../storage/img/photo_3.jpg');
+(1, '2022-07-13 08:16:21', '2022-07-13 08:16:21', 'Первое объявление', 'Описание к первому объявлению', 30000, '../storage/img/photo_2.jpg;'),
+(2, '2022-07-13 08:16:56', '2022-07-13 08:16:56', 'Второе объявление', 'Описание к второму объявлению', 40000, '../storage/img/photo_1.jpg;'),
+(3, '2022-07-13 08:17:33', '2022-07-13 08:17:33', 'Третье объявление', 'Описание к третьему объявлению', 50000, '../storage/img/photo_3.jpg;'),
+(4, '2022-07-13 08:18:09', '2022-07-13 08:18:09', 'Объявление заглушка', 'Заглушка', 100000, '../storage/img/img.jpg;');
 
 -- --------------------------------------------------------
 
@@ -78,10 +79,10 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_resets_table', 1),
-(3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2022_07_11_155241_create_ads_table', 1);
+(5, '2014_10_12_000000_create_users_table', 1),
+(6, '2014_10_12_100000_create_password_resets_table', 1),
+(7, '2019_08_19_000000_create_failed_jobs_table', 1),
+(8, '2022_07_11_155241_create_ads_table', 1);
 
 -- --------------------------------------------------------
 
@@ -155,7 +156,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `ads`
 --
 ALTER TABLE `ads`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `failed_jobs`
@@ -167,7 +168,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT для таблицы `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
