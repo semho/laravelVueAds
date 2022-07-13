@@ -139,4 +139,8 @@ export default {
   color: white;
   cursor: pointer;
 }
+
+.cards-list__col {
+  margin-bottom: 15px;
+}
 </style>

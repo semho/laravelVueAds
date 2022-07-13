@@ -78,30 +78,24 @@ export default {
           }
         }
       ).then(function(res) {
-        //если есть приходит ответ
-        if (res.status == 200) {
-          //если в ответе ошибка
-          if (res.data.error) {
-            const div = document.createElement('div');
-            div.classList.add('alert-server');
-            div.innerText = res.data.error;
-            //показываем пользователю
-            document.getElementById('formCreate').append(div);
-          } else {
-            //если ошибка была, удаляем ее
-            const findError = document.querySelectorAll('.alert-server');
-            if (findError) {
-              findError.forEach(el => el.remove());
-            }
-            console.log(res.data.last_insert_id);
-            window.location.href = "/";
-          }
-        } else {
-          console.log('FAILURE!!');
+        //если ошибка была, удаляем ее
+        const findError = document.querySelectorAll('.alert-server');
+        if (findError) {
+          findError.forEach(el => el.remove());
         }
+        console.log(res.data.last_insert_id);
+        window.location.href = "/";
       })
-      .catch(function(){
-        console.log('FAILURE!!');
+      .catch(function(error){
+        console.log('FAILURE!!: ' + error);
+        //если ошибка
+        if (error) {
+          const div = document.createElement('div');
+          div.classList.add('alert-server');
+          div.innerText = 'Данные не корректны';
+          //показываем пользователю
+          document.getElementById('formCreate').append(div);
+        }
       });
       this.files = [];
     },
@@ -118,14 +112,15 @@ export default {
       if (!this.price) {
         this.errors.push('Требуется указать цену товара.');
       }
+      if (!Number.isInteger(Number(this.price))) {
+        this.errors.push('Цена должны быть числом.');
+      }
       if (!this.description) {
         this.errors.push('Требуется заполнить описание.');
       } else if (this.description.length > 1000) {
         this.errors.push('Описание не может быть длинее 1000 символов.');
       }
-      if (!this.files.length) {
-        this.errors.push('Загрузите фото.');
-      } else if (this.files.length > 3) {
+      if (this.files.length > 3) {
         this.errors.push('Загрузить можно не более 3 файлов.');
       }
     }

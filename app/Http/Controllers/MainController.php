@@ -22,20 +22,31 @@ class MainController extends Controller
 
   public function store(Request $request)
   {
-    $name = Validate::clean($_POST['name']);
-    $price = Validate::clean($_POST['price']);
-    $description = Validate::clean($_POST['description']);
-    $files = $_FILES['files']['name'];
+    //проверяем все данные
+    $name = Validate::clean($request['name']);
+    $price = Validate::clean($request['price']);
+    $description = Validate::clean($request['description']);
 
     $stringPhotos = '';
-    foreach ($files as $file) {
+    //есть ли загруженные фото
+    if (isset($_FILES['files']['name'])) {
+      $files = $_FILES['files']['name'];
+      foreach ($files as $file) {
         $stringPhotos .= "../storage/img/$file;";
+      }
+    } else {
+    //делаем заглушку
+      $stringPhotos .= "../storage/img/img.jpg;";
     }
 
+    //проверка на пустоту
     if (!empty($name)
       && !empty($price)
       && !empty($description)
-      && !empty($files)) {
+      && !empty($stringPhotos)
+    )
+    {
+      //проверка по длинне символов
       if (Validate::check_length($name, 0, 200)
         && Validate::check_length($price, 0, 50)
         && Validate::check_length($description, 0, 1000)) {
@@ -48,14 +59,10 @@ class MainController extends Controller
         $id = $ad->id;
         $this->data['last_insert_id'] = $id;
 
-      } else {
-        $this->data['error'] = "Введенные данные некорректны";
+        return response($this->data, 201);
       }
-    } else {
-      $this->data['error'] = "Заполните пустые поля";
     }
 
-    //отправляем ответ в виде json
-    return json_encode($this->data);
+    return response($this->data['error'] = 'Данные не корректны', 400);
   }
 }

@@ -5,7 +5,7 @@
       Объявление: {{ card.name }}
     </h1>
     <div class="card-detail__container-first-img first-img row">
-      <img class="card-detail-first-img col-md-6" :src="card.photo" alt="Первое фото">
+      <img class="card-detail-first-img col-md-8" :src="card.photo" alt="Первое фото">
     </div>
     <div class="card-detail__container-other other-img row"  v-if="otherPhoto !== null">
       <img class="card-detail__other col-md-6" v-if="otherPhoto.photo_1" :src="otherPhoto.photo_1" alt="Второе фото">
@@ -51,5 +51,7 @@ export default {
 </script>
 
 <style scoped>
-
+.card-detail-first-img {
+  margin: 0 auto;
+}
 </style>
